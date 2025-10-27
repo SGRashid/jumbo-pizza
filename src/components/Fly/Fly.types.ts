@@ -12,3 +12,8 @@ export interface FlySplatProps {
   size?: number;
   color?: string;
 }
+
+export interface SplatPosition {
+  x: number;
+  y: number;
+}

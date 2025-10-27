@@ -1,20 +1,22 @@
 import { useEffect, useRef, useState, useCallback, type FC } from 'react';
-import { type FlyProps } from './Fly.props';
+import { type FlyProps, type SplatPosition } from './Fly.types.ts';
 import styles from './Fly.module.css';
 import { FlySplat } from './FlySplat';
+import * as FLY_CONST from './Fly.constants.ts';
 
 const Fly: FC<FlyProps> = ({ 
-  size = 20, 
-  speed = 3, 
-  color = '#333333',
+  size = FLY_CONST.FLY_SIZE, 
+  speed = FLY_CONST.FLY_SPEED, 
+  color = FLY_CONST.FLY_COLOR,
   onSquash,
-  zIndex = 1000 
+  zIndex = FLY_CONST.FLY_Z_INDEX 
 }) => {
   const flyRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [direction, setDirection] = useState(0);
   const [isFlyVisible, setIsFlyVisible] = useState(true);
   const [isSquashed, setIsSquashed] = useState(false);
+  const [splatPosition, setSplatPosition] = useState<SplatPosition>({x: 0, y: 0});
   const animationRef = useRef<number>(null);
 
   // Генерация случайной начальной позиции
@@ -93,16 +95,24 @@ const Fly: FC<FlyProps> = ({
 
   // Обработчик убийства мухи
   const handleSquash = () => {
+    setSplatPosition({
+      x: position.x + size / 2, // центр мухи
+      y: position.y + size / 2  // центр мухи
+    });
+
     setIsSquashed(true);
     onSquash?.();
     setIsFlyVisible(false);
+
     // Исчезновение через секунду
     setTimeout(() => {
+      
       setIsSquashed(false);
       // Появление снова
       setTimeout(() => {
          setIsFlyVisible(true);
-      }, 500);
+      }, FLY_CONST.FLY_DELAY_BEFORE_RESSURECTION);
+
     }, 1000);
   };
 
@@ -131,8 +141,8 @@ const Fly: FC<FlyProps> = ({
   if (isSquashed) {
     return (
       <FlySplat
-        x={position.x + size / 2} // центр мухи
-        y={position.y + size / 2} // центр мухи
+        x={splatPosition.x} // центр мухи
+        y={splatPosition.y} // центр мухи
       />
   );
   }

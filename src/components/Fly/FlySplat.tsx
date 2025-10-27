@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { type FlySplatProps } from "./Fly.props";
+import { type FlySplatProps } from "./Fly.types.ts";
 
 export const FlySplat: FC<FlySplatProps> = ({
     x = 0,
