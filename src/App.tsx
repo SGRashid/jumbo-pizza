@@ -9,7 +9,7 @@ function App(): JSX.Element {
 
   const handleFlySquashed = (): void => {
     setNumberOfKilledFlies(i => i + 1);
-  }
+  };
 
   return (
     <>
@@ -17,7 +17,7 @@ function App(): JSX.Element {
       <p> Мух убито: { fliesWereKilled }</p>
       <Fly onSquash={handleFlySquashed}></Fly>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
