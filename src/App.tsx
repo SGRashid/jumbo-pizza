@@ -3,6 +3,7 @@ import { ButtonPrimary } from './components/ButtonPrimary/ButtonPrimary';
 import Fly from './components/Fly/Fly';
 import { ButtonSecondary } from './components/ButtonSecondary/ButtonSecondary';
 import { ButtonAccent } from './components/ButtonAccent/ButtonAccent';
+import { Input } from './components/Input/Input';
 
 function App(): JSX.Element {
   const [fliesWereKilled, setNumberOfKilledFlies] = useState<number>(0);
@@ -18,6 +19,7 @@ function App(): JSX.Element {
       <ButtonPrimary onClick={handleButtonClick}>Кнопка</ButtonPrimary>
       <ButtonSecondary>кнопка</ButtonSecondary>
       <ButtonAccent>Кнопка</ButtonAccent>
+      <Input />
       <p> Мух убито: { fliesWereKilled }</p>
       <Fly onSquash={handleFlySquashed}></Fly>
     </>
