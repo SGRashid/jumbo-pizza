@@ -5,6 +5,11 @@
     --text-secondary-color: #5b5b5E;
     --white-color: #FFFFFF;
     --separator-color: #D4D6E0;
+
+    /* Для кнопок */
+    --button-primary-hight: 60px;
+    --button-secondary-hight: 44px;
+    --button-accent-color: #fd2e0e !important;
 }
 
 body {

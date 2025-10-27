@@ -1,0 +1,57 @@
+.button {
+    position: relative;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    color: var(--white-color);
+}
+
+/* Базовые цвета для вариантов */
+.button.primary {
+    background-color: var(--primary-color);
+    height: var(--button-primary-hight);
+    text-transform: uppercase;
+}
+
+.button.secondary {
+    background-color: var(--primary-color);
+    height: var(--button-secondary-hight);
+}
+
+.button.accent {
+    background-color: (--button-accent-color);
+    text-transform: uppercase;
+}
+
+.button:hover {
+    animation: shakyHover 0.25s ease-in-out;
+    transform: rotate(2deg) scale(1.05);
+}
+
+@keyframes shakyHover {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(-3deg) scale(1.02);
+    }
+
+    50% {
+        transform: rotate(3deg) scale(1.04);
+    }
+
+    75% {
+        transform: rotate(-1deg) scale(1.03);
+    }
+
+    100% {
+        transform: rotate(2deg) scale(1.05);
+    }
+}
