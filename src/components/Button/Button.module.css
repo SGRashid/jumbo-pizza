@@ -25,7 +25,8 @@
 }
 
 .button.accent {
-    background-color: (--button-accent-color);
+    background-color: var(--button-accent-color);
+    height: var(--button-primary-hight);
     text-transform: uppercase;
 }
 
@@ -52,6 +53,6 @@
     }
 
     100% {
-        transform: rotate(2deg) scale(1.05);
+        transform: rotate(5deg) scale(1.05);
     }
 }

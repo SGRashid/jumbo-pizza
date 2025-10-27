@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback, type FC } from 'react';
 import { type FlyProps, type SplatPosition } from './Fly.types.ts';
 import styles from './Fly.module.css';
-import { FlySplat } from './FlySplat';
+import { FlySplat } from './components/FlySplat';
 import * as FLY_CONST from './Fly.constants.ts';
 
 const Fly: FC<FlyProps> = ({ 

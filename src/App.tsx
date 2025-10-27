@@ -1,6 +1,8 @@
 import {  useState, type JSX, type MouseEvent } from 'react';
-import Button from './components/Button/Button';
+import { ButtonPrimary } from './components/ButtonPrimary/ButtonPrimary';
 import Fly from './components/Fly/Fly';
+import { ButtonSecondary } from './components/ButtonSecondary/ButtonSecondary';
+import { ButtonAccent } from './components/ButtonAccent/ButtonAccent';
 
 function App(): JSX.Element {
   const [fliesWereKilled, setNumberOfKilledFlies] = useState<number>(0);
@@ -13,7 +15,9 @@ function App(): JSX.Element {
 
   return (
     <>
-      <Button onClick={handleButtonClick}>Кнопка</Button>
+      <ButtonPrimary onClick={handleButtonClick}>Кнопка</ButtonPrimary>
+      <ButtonSecondary>кнопка</ButtonSecondary>
+      <ButtonAccent>Кнопка</ButtonAccent>
       <p> Мух убито: { fliesWereKilled }</p>
       <Fly onSquash={handleFlySquashed}></Fly>
     </>
