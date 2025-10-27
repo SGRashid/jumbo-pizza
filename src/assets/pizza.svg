@@ -1,0 +1,67 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .pizza-rotate {
+      animation: rotate 15s linear infinite;
+      transform-origin: center;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Мигание сыра для большей живости */
+    .cheese {
+      animation: cheeseGlow 3s ease-in-out infinite alternate;
+    }
+    @keyframes cheeseGlow {
+      from { opacity: 0.8; }
+      to { opacity: 1; }
+    }
+  </style>
+  
+  <g class="pizza-rotate">
+    <!-- Основа пиццы с вырезанным кусочком -->
+    <path d="M16 2 
+             A14 14 0 1 1 4 16
+             L16 16 Z" 
+          fill="#FE724C" stroke="#E55A36" stroke-width="0.5"/>
+    
+    <!-- Внешняя корочка -->
+    <path d="M16 2 
+             A14 14 0 1 1 4 16
+             L16 16 Z" 
+          fill="none" stroke="#F7B500" stroke-width="1.5"/>
+    
+    <!-- Линия среза -->
+    <line x1="16" y1="16" x2="4" y2="16" stroke="#8B4513" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <!-- Кусочки сыра (анимированные) -->
+    <circle class="cheese" cx="12" cy="8" r="1.2" fill="#FFD700"/>
+    <circle class="cheese" cx="20" cy="6" r="0.8" fill="#FFD700"/>
+    <circle class="cheese" cx="14" cy="14" r="1" fill="#FFD700"/>
+    <circle class="cheese" cx="22" cy="12" r="1.2" fill="#FFD700"/>
+    <circle class="cheese" cx="18" cy="20" r="0.8" fill="#FFD700"/>
+    
+    <!-- Пепперони -->
+    <circle cx="10" cy="10" r="1.5" fill="#8B0000"/>
+    <circle cx="20" cy="15" r="1.2" fill="#8B0000"/>
+    <circle cx="12" cy="18" r="1.2" fill="#8B0000"/>
+    
+    <!-- Зелень -->
+    <circle cx="16" cy="6" r="0.8" fill="#228B22"/>
+    <circle cx="24" cy="8" r="0.6" fill="#228B22"/>
+    <circle cx="18" cy="12" r="0.6" fill="#228B22"/>
+    
+    <!-- Пар от горячей пиццы -->
+    <g opacity="0.7">
+      <circle cx="3" cy="14" r="0.8" fill="#FFFFFF">
+        <animate attributeName="cy" from="14" to="12" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.7" to="0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="5" cy="15" r="0.6" fill="#FFFFFF">
+        <animate attributeName="cy" from="15" to="13" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="opacity" from="0.7" to="0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+    </g>
+  </g>
+</svg>
