@@ -1,0 +1,157 @@
+.fly {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--fly-size);
+    height: var(--fly-size);
+    transform:
+        translateX(var(--fly-x)) translateY(var(--fly-y)) rotate(var(--fly-direction));
+    cursor: pointer;
+    z-index: var(--z-index);
+    transition: transform 0.1s linear;
+    pointer-events: auto;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--fly-color);
+    border-radius: 40% 40% 50% 50%;
+    animation: flyIdle 2s infinite ease-in-out;
+}
+
+/* Пиксельные глаза */
+.eye {
+    position: absolute;
+    width: calc(var(--fly-size) * 0.15);
+    height: calc(var(--fly-size) * 0.15);
+    background-color: white;
+    border: 1px solid #000;
+    top: calc(var(--fly-size) * 0.2);
+}
+
+.eye:nth-child(1) {
+    left: calc(var(--fly-size) * 0.2);
+}
+
+.eye:nth-child(2) {
+    right: calc(var(--fly-size) * 0.2);
+}
+
+/* Пиксельные крылья */
+.wing {
+    position: absolute;
+    width: calc(var(--fly-size) * 0.4);
+    height: calc(var(--fly-size) * 0.3);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #666;
+    top: calc(var(--fly-size) * -0.1);
+    animation: wingFlap 0.3s infinite ease-in-out;
+}
+
+.wing:nth-child(3) {
+    left: calc(var(--fly-size) * 0.1);
+    border-radius: 50% 50% 40% 40%;
+    transform: rotate(-10deg);
+    animation-delay: 0s;
+}
+
+.wing:nth-child(4) {
+    right: calc(var(--fly-size) * 0.1);
+    border-radius: 50% 50% 40% 40%;
+    transform: rotate(10deg);
+    animation-delay: 0.15s;
+}
+
+/* Анимация полета */
+@keyframes flyIdle {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(calc(var(--fly-size) * 0.1));
+    }
+}
+
+@keyframes wingFlap {
+
+    0%,
+    100% {
+        transform: rotate(-10deg) scaleY(1);
+    }
+
+    50% {
+        transform: rotate(-5deg) scaleY(0.8);
+    }
+}
+
+.wing:nth-child(4) {
+    animation-name: wingFlapRight;
+}
+
+@keyframes wingFlapRight {
+
+    0%,
+    100% {
+        transform: rotate(10deg) scaleY(1);
+    }
+
+    50% {
+        transform: rotate(5deg) scaleY(0.8);
+    }
+}
+
+/* Состояние убитой мухи */
+.squashedFly {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--fly-size);
+    height: calc(var(--fly-size) * 0.3);
+    transform:
+        translateX(var(--fly-x)) translateY(var(--fly-y));
+    background-color: var(--fly-color);
+    z-index: var(--z-index);
+    border-radius: 50%;
+    animation: squashed 1s forwards;
+    cursor: pointer;
+}
+
+@keyframes squashed {
+    0% {
+        transform:
+            translateX(var(--fly-x)) translateY(var(--fly-y)) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateX(var(--fly-x)) translateY(var(--fly-y)) scale(1.2);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateX(var(--fly-x)) translateY(var(--fly-y)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Эффект при наведении */
+.fly:hover {
+    filter: brightness(1.3);
+    transform:
+        translateX(var(--fly-x)) translateY(var(--fly-y)) rotate(var(--fly-direction)) scale(1.1);
+}
+
+.fly:hover .body {
+    animation-duration: 0.5s;
+}
+
+.fly:hover .wing {
+    animation-duration: 0.1s;
+}
