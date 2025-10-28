@@ -3,6 +3,7 @@ import {
     type InputProps,
     type validationError,
 } from './Input.types';
+import styles from './Input.module.css';
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(({ value, ...props }, ref) => {
     const [ error, setError ] = useState<validationError>(null);
@@ -22,6 +23,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ value, ...props
             onBlur={handleBlur}
             onChange={handleChange}
             ref={ref}
+            className={`${styles.input}`}
             { ...props }
         />
     );

@@ -1,4 +1,4 @@
-import {  useState, type JSX, type MouseEvent } from 'react';
+import { useState, type JSX, type MouseEvent } from 'react';
 import { ButtonPrimary } from './components/ButtonPrimary/ButtonPrimary';
 import Fly from './components/Fly/Fly';
 import { ButtonSecondary } from './components/ButtonSecondary/ButtonSecondary';
@@ -25,6 +25,7 @@ function App(): JSX.Element {
       <Input
         value={inputValue}
         onChange={handleChange}
+
       />
       <p>input value: {inputValue}</p>
       <p> Мух убито: { fliesWereKilled }</p>
