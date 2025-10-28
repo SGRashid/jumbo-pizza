@@ -7,6 +7,9 @@ import { Input } from './components/Input/Input';
 
 function App(): JSX.Element {
   const [fliesWereKilled, setNumberOfKilledFlies] = useState<number>(0);
+  const [inputValue, setInputValue] = useState<string>('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value);
 
   const handleButtonClick = (e: MouseEvent) => console.log(e);
 
@@ -19,7 +22,11 @@ function App(): JSX.Element {
       <ButtonPrimary onClick={handleButtonClick}>Кнопка</ButtonPrimary>
       <ButtonSecondary>кнопка</ButtonSecondary>
       <ButtonAccent>Кнопка</ButtonAccent>
-      <Input />
+      <Input
+        value={inputValue}
+        onChange={handleChange}
+      />
+      <p>input value: {inputValue}</p>
       <p> Мух убито: { fliesWereKilled }</p>
       <Fly onSquash={handleFlySquashed}></Fly>
     </>

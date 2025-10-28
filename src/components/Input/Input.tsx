@@ -1,20 +1,19 @@
-import { useState, type FC } from 'react';
+import { forwardRef, useState } from 'react';
 import {
     type InputProps,
     type validationError,
 } from './Input.types';
 
-export const Input: FC<InputProps> = ({ validator, ...props }) => {
-    const [ value, setValue ] = useState<string>('');
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ value, ...props }, ref) => {
     const [ error, setError ] = useState<validationError>(null);
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        if (props.onBlur) props.onBlur(e);
+        // здесь добавим валидацию
+        if (props?.onBlur) props.onBlur(e);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value);
-        if (props.onChange) props.onChange(e);
+        if (props?.onChange) props.onChange(e);
         if (error) setError(null); // очистка ошибки при начале ввода.
     };
     return(
@@ -22,7 +21,8 @@ export const Input: FC<InputProps> = ({ validator, ...props }) => {
             value={value}
             onBlur={handleBlur}
             onChange={handleChange}
+            ref={ref}
             { ...props }
         />
     );
-};
+});
