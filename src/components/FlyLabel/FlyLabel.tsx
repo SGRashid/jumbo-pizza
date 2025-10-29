@@ -1,0 +1,1 @@
+export const FlyLabel = () => <img src='/src/assets/fly.png' />;
