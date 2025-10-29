@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        
+.layout {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 25%;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid gray;
+}
+
+.main-content {
+    grid-column: 2;
+    padding: 20px;
+}
