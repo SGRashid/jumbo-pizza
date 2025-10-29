@@ -1,12 +1,11 @@
 import { useState, type JSX, type MouseEvent } from 'react';
-import { Route, Routes } from 'react-router-dom';
 import { ButtonPrimary } from './components/ButtonPrimary/ButtonPrimary';
 import Fly from './components/Fly/Fly';
 import { ButtonSecondary } from './components/ButtonSecondary/ButtonSecondary';
 import { ButtonAccent } from './components/ButtonAccent/ButtonAccent';
 import { Input } from './components/Input/Input';
-import { Menu } from './components/pages/Menu/Menu';
-import { Cart } from './components/pages/Cart/Cart';
+import { Link, RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
 function App(): JSX.Element {
   const [fliesWereKilled, setNumberOfKilledFlies] = useState<number>(0);
@@ -32,10 +31,7 @@ function App(): JSX.Element {
       <p>input value: {inputValue}</p>
       <p> Мух убито: { fliesWereKilled }</p>
       <Fly onSquash={handleFlySquashed}></Fly>
-      <Routes>
-        <Route path='/' element={<Menu></Menu>} />
-        <Route path='/cart' element={<Cart />} />
-      </Routes>
+      {/* <RouterProvider router={router} /> */}
     </>
   );
 }

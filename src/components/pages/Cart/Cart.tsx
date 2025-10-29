@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
+import { MenuLinks } from '../MenuLinks/MenuLinks';
 
-export const Cart = () =>     (
-    <>
-        Cart
-        <Link to='/'>menu</Link>
-    </>
-);
+export const Cart = () => 
+(<>
+    <p>Cart</p>
+    <MenuLinks />
+</>);
