@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 15% 85%;
     min-height: 100vh;
 }
 
@@ -16,13 +16,14 @@
     color: white;
     padding: 20px;
     position: fixed;
-    width: 25%;
+    width: 15%;
     height: 100vh;
     overflow-y: auto;
     border-right: 1px solid gray;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .main-content {
