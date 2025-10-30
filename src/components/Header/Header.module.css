@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.menu_title {
+    margin-right: 30px;
+}
