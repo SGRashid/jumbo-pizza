@@ -1,19 +1,15 @@
 import { useEffect, useState, type FC } from 'react';
 import { Header } from '../../Header/Header';
 import { type MenuItem } from '../../../interfaces/Menu.interface';
+import { getMenu } from '../../../helpers/GetMenu';
 
 export const Menu: FC = () => {
-    const [menu, setMenu] = useState([]);
-
-    const getMenu = async () => {
-        const res = await fetch('https://purpleschool.ru/pizza-api-demo/products');
-        const data = await res.json();
-        console.log(data);
-        setMenu(data);
-    };
+    const [menu, setMenu] = useState<MenuItem[]>([]);
 
     useEffect(() => {
-        getMenu();
+        getMenu()
+            .then((data) => setMenu(data))
+            .catch((err) => console.error(err.message));
     }, []);
 
     return (

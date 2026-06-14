@@ -1,0 +1,1 @@
+export const httpErrorHandler = (status: number) => alert(`HTTP error! status: ${status}`);
