@@ -5,7 +5,7 @@ import { MenuLinks } from '../pages/MenuLinks/MenuLinks';
 import Fly from '../Fly/Fly';
 import { ButtonSecondary } from '../ButtonSecondary/ButtonSecondary';
 import { FlyLabel } from '../FlyLabel/FlyLabel';
-import { MenuItems } from './Layout.constants';
+import { MenuItems } from '../../assets/constants/Router.constants';
 
 export const Layout: FC = () => {
     const location = useLocation();

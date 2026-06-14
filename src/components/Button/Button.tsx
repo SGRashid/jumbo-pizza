@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { ButtonTypes, type ButtonProps } from './Button.props';
 import styles from './Button.module.css';
 
-const Button = ({ children, buttonType, ...props}: ButtonProps): JSX.Element => {
+const Button: React.FC<ButtonProps> = ({ children, buttonType, ...props}: ButtonProps): JSX.Element => {
     const cx = classNames.bind(styles);
     
     const btnClasses = cx({

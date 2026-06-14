@@ -13,7 +13,7 @@ function App(): JSX.Element {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value);
 
-  const handleButtonClick = (e: MouseEvent) => console.log(e);
+  const handleButtonClick = (e: MouseEvent) => log(e);
 
   const handleFlySquashed = (): void => {
     setNumberOfKilledFlies(i => i + 1);

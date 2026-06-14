@@ -5,6 +5,6 @@ import type { MenuLinksProps } from './MenuLinks.types';
 
 export const MenuLinks: FC<MenuLinksProps> = ({ items }) => (
     <div className={`${styles.links}`}>
-        { items?.map(i => <Link to={i.url} >{i.text}</Link>) }
+        { items?.map(i => <Link to={i.url} key={i.url}>{i.text}</Link>) }
     </div>
 ); 

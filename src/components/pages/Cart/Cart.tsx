@@ -1,4 +1,4 @@
-export const Cart = () => 
+export const Cart: React.FC = () => 
 (<>
     <p>Cart</p>
 </>);

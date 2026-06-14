@@ -1,4 +1,4 @@
-import type { MenuLinksPropsItem } from '../pages/MenuLinks/MenuLinks.types';
+import type { MenuLinksPropsItem } from '../../components/pages/MenuLinks/MenuLinks.types';
 
 export const MenuItems: MenuLinksPropsItem[] = [
     { text: 'Menu', url: '/' },
