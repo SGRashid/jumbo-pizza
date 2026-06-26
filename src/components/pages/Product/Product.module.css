@@ -1,0 +1,68 @@
+.container {
+  padding: 20px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+.header {
+  margin-bottom: 12px;
+  font-size: 28px;
+  font-weight: 700;
+}
+.content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.imageWrapper {
+  flex: 0 0 360px;
+}
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(180deg, #f7f7f7, #efefef);
+}
+.placeholder {
+  width: 360px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  background: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  font-size: 16px;
+}
+.details {
+  flex: 1 1 320px;
+  min-width: 200px;
+}
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+.rating {
+  display: inline-block;
+  background: #ffefc1;
+  color: #8a6000;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.ingTitle {
+  margin: 14px 0 6px 0;
+  font-weight: 700;
+}
+.ingredientList {
+  margin: 0;
+  padding-left: 18px;
+}
+.loading {
+  padding: 28px;
+  text-align: center;
+}
