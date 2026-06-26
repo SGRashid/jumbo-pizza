@@ -1,7 +1,7 @@
 import { useEffect, type FC } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import styles from './Layout.module.css';
-import { MenuLinks } from '../pages/MenuLinks/MenuLinks';
+import { MenuLinks } from '../MenuLinks/MenuLinks';
 import Fly from '../Fly/Fly';
 import { ButtonSecondary } from '../ButtonSecondary/ButtonSecondary';
 import { FlyLabel } from '../FlyLabel/FlyLabel';
@@ -11,16 +11,16 @@ export const Layout: FC = () => {
     const location = useLocation();
 
     useEffect(() => console.log(location), [location]);
-    
+
     return (
-        <div className={ styles.layout }>
-            <div className={ styles.sidebar }>
+        <div className={styles.layout}>
+            <div className={styles.sidebar}>
                 <FlyLabel />
-                <MenuLinks items={ MenuItems } />
+                <MenuLinks items={MenuItems} />
                 <ButtonSecondary>Выйти</ButtonSecondary>
                 <Fly />
             </div>
-            <div className={ styles['main-content'] }>
+            <div className={styles['main-content']}>
                 <Outlet />
             </div>
         </div>
